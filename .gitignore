@@ -16,5 +16,5 @@ Thumbs.db
 !.elasticbeanstalk/*.global.yml
 
 logs/
-
+logfiles.txt
 
