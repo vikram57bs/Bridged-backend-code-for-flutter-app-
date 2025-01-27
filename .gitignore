@@ -15,4 +15,5 @@ Thumbs.db
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
 
-./logs.js
+**/logs.js
+
