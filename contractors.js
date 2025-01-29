@@ -33,25 +33,19 @@ async function updateContractorProfilePicture(mobile, profilePhoto) {
   useUnifiedTopology: true
 });
 
-    // Define the models
 
-    // Check if the mobile number exists in MyFirstPripo
     const firstPripoRecord = await MyFirstPripo.findOne({ "mobile_number": mobile });
 
     if (firstPripoRecord) {
-      // Update the profile photo in MyFirstPripo
       await MyFirstPripo.updateOne({ "mobile_number": mobile }, { $set: { "profile_photo": profilePhoto } });
       return 'yes';
     } else {
-      // Check if the mobile number exists in MyconPripo
       const conPripoRecord = await MyconPripo.findOne({ "mobile_number": mobile });
 
       if (conPripoRecord) {
-        // Update the profile photo in MyconPripo
         await MyconPripo.updateOne({ "mobile_number": mobile }, { $set: { "profile_photo": profilePhoto } });
         return 'yes';
       } else {
-        // Mobile number not found in either collection
         return 'Mobile number not found in any collection';
       }
     }
@@ -338,7 +332,6 @@ async function conntffr(n) {
   }
 }
 async function conntfctd() {
-  const n = "7907666366";
   try {
     await mongoose.connect(dbURI, {
   useNewUrlParser: true,
@@ -354,7 +347,6 @@ async function conntfctd() {
   }
 }
 async function conntappr() {
-  //const n = "7305621554";
   try {
     await mongoose.connect(dbURI, {
   useNewUrlParser: true,

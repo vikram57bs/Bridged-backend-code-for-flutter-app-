@@ -159,7 +159,6 @@ async function conntadr(n) {
   }
 }
 async function conntalllr() {
-  ///const n = "7907666366";
   try {
     await mongoose.connect(dbURI, {
       useNewUrlParser: true,

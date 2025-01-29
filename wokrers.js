@@ -55,26 +55,20 @@ async function changelanguage(data) {
       useUnifiedTopology: true
     });
 
-    // Define the models
     
 
-    // Check if the mobile number exists in MyFirstPripo
     const firstPripoRecord = await MyFirstPripo.findOne({ "mobile_number": data["mobile_number"] });
 
     if (firstPripoRecord) {
-      // Update the language in MyFirstPripo
       await MyFirstPripo.updateOne({ "mobile_number": data["mobile_number"] }, { $set: { "language": data["language"] } });
       return 'yes';
     } else {
-      // Check if the mobile number exists in MyconPripo
       const conPripoRecord = await MyconPripo.findOne({ "mobile_number": data["mobile_number"] });
 
       if (conPripoRecord) {
-        // Update the language in MyconPripo
         await MyconPripo.updateOne({ "mobile_number": data["mobile_number"] }, { $set: { "language": data["language"] } });
         return 'yes';
       } else {
-        // Mobile number not found in either collection
         return 'Mobile number not found in any collection';
       }
     }
@@ -91,26 +85,20 @@ async function changeaddress(data) {
       useUnifiedTopology: true
     });
 
-    // Define the models
     
 
-    // Check if the mobile number exists in MyFirstPripo
     const firstPripoRecord = await MyFirstPripo.findOne({ "mobile_number": data["mobile_number"] });
 
     if (firstPripoRecord) {
-      // Update the language in MyFirstPripo
       await MyFirstPripo.updateOne({ "mobile_number": data["mobile_number"] }, { $set: { "address": data["address"] } });
       return 'yes';
     } else {
-      // Check if the mobile number exists in MyconPripo
       const conPripoRecord = await MyconPripo.findOne({ "mobile_number": data["mobile_number"] });
 
       if (conPripoRecord) {
-        // Update the language in MyconPripo
         await MyconPripo.updateOne({ "mobile_number": data["mobile_number"] }, { $set: { "address": data["address"] } });
         return 'yes';
       } else {
-        // Mobile number not found in either collection
         return 'Mobile number not found in any collection';
       }
     }
@@ -126,26 +114,20 @@ async function changepassword(data) {
       useUnifiedTopology: true
     });
 
-    // Define the models
   
 
-    // Check if the mobile number exists in MyFirstPripo
     const firstPripoRecord = await MyFirstPripo.findOne({ "mobile_number": data["mobile_number"] });
 
     if (firstPripoRecord) {
-      // Update the language in MyFirstPripo
       await MyFirstPripo.updateOne({ "mobile_number": data["mobile_number"] }, { $set: { "password": data["password"] } });
       return 'yes';
     } else {
-      // Check if the mobile number exists in MyconPripo
       const conPripoRecord = await MyconPripo.findOne({ "mobile_number": data["mobile_number"] });
 
       if (conPripoRecord) {
-        // Update the language in MyconPripo
         await MyconPripo.updateOne({ "mobile_number": data["mobile_number"] }, { $set: { "password": data["password"] } });
         return 'yes';
       } else {
-        // Mobile number not found in either collection
         return 'Mobile number not found in any collection';
       }
     }
@@ -161,26 +143,19 @@ async function changecity(data) {
       useUnifiedTopology: true
     });
 
-    // Define the models
     
-
-    // Check if the mobile number exists in MyFirstPripo
     const firstPripoRecord = await MyFirstPripo.findOne({ "mobile_number": data["mobile_number"] });
 
     if (firstPripoRecord) {
-      // Update the language in MyFirstPripo
       await MyFirstPripo.updateOne({ "mobile_number": data["mobile_number"] }, { $set: { "city": data["city"] } });
       return 'yes';
     } else {
-      // Check if the mobile number exists in MyconPripo
       const conPripoRecord = await MyconPripo.findOne({ "mobile_number": data["mobile_number"] });
 
       if (conPripoRecord) {
-        // Update the language in MyconPripo
         await MyconPripo.updateOne({ "mobile_number": data["mobile_number"] }, { $set: { "city": data["city"] } });
         return 'yes';
       } else {
-        // Mobile number not found in either collection
         return 'Mobile number not found in any collection';
       }
     }
@@ -196,26 +171,21 @@ async function changenumber(data) {
       useUnifiedTopology: true
     });
 
-    // Define the models
+    
     
 
-    // Check if the mobile number exists in MyFirstPripo
     const firstPripoRecord = await MyFirstPripo.findOne({ "mobile_number": data["mobile_number"] });
 
     if (firstPripoRecord) {
-      // Update the language in MyFirstPripo
       await MyFirstPripo.updateOne({ "mobile_number": data["mobile_number"] }, { $set: { "mobile_number": data["mobile_number"] } });
       return 'yes';
     } else {
-      // Check if the mobile number exists in MyconPripo
       const conPripoRecord = await MyconPripo.findOne({ "mobile_number": data["mobile_number"] });
 
       if (conPripoRecord) {
-        // Update the language in MyconPripo
         await MyconPripo.updateOne({ "mobile_number": data["mobile_number"] }, { $set: { "mobile_number": data["mobile_number"] } });
         return 'yes';
       } else {
-        // Mobile number not found in either collection
         return 'Mobile number not found in any collection';
       }
     }
@@ -228,7 +198,6 @@ async function changenumber(data) {
 
 
 async function conntallr() {
-  //const n = "7305621554";
   try {
     await mongoose.connect(dbURI, {
       useNewUrlParser: true,
@@ -244,7 +213,6 @@ async function conntallr() {
   }
 }
 async function conntallff() {
-  //const n = "7305621554";
   try {
     await mongoose.connect(dbURI, {
       useNewUrlParser: true,

@@ -8,21 +8,18 @@ const port = process.env.PORT;
 app.use(bodyParser.json());
 
 
-// Function to connect to MongoDB and insert data
 app.use(cors());
 
-// Middleware for parsing URL-encoded and JSON bodies
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-// Serve static files (ensure the directory contains the file)
 app.use('/', express.static(path.join(__dirname)));
 app.use('/workers', express.static(path.join(__dirname,'logfiles.txt')));
 app.use('/contractors', express.static(path.join(__dirname,'logfiles.txt')));
 app.use('/groups', express.static(path.join(__dirname,'logfiles.txt')));
 app.use('/credentials', express.static(path.join(__dirname,'logfiles.txt')));
 app.use('/sessions/checktoken', express.static(path.join(__dirname,'logfiles.txt')));
-// Middleware for logging requests
+
 app.use((req, res, next) => {
   logs(`${req.method}\t${req.url}\t${req.headers.origin}`, 'logfiles.txt');
   next();
@@ -44,7 +41,7 @@ app.use((err, req, res, next) => {
   next();
 });
 
-// Start the server
+
 app.listen(port, (err) => {
   if (err) {
     console.log(err.message);
@@ -52,7 +49,6 @@ app.listen(port, (err) => {
     console.log('Server is running on port', port);
   }
 });
-// Route for handling POST requests to '/a'
 
 
 
